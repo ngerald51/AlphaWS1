@@ -1,6 +1,8 @@
 def max_profits (prices)
+	#find low and high of a price arrary
   lowest_price = prices.min
   highest_price = prices.max
+
   position_lowest = prices.index(lowest_price)
   new_array1 = prices[position_lowest..prices.length]
   highest_in_new_array1 = new_array1.max
@@ -15,14 +17,6 @@ def max_profits (prices)
     then puts profits_1
   else puts profits_2
   end
-
-   #puts profits_2
-    #puts profits_1
-
- #puts position_lowest
-  #puts position_highest
-  #puts new_array1
-  #puts profits_1
 
 end
 
