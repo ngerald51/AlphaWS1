@@ -1,15 +1,18 @@
 def search_insert(nums, target)
-hash = Hash[nums.map.with_index.to_a]    # => {"a"=>0, "b"=>1, "c"=>2}
-i=0
-if hash[target] != nil
-	puts hash[target]
 
-else
-	while target >= nums[i]
-		i++
-	end
+ if nums.index(target) != nil
+    puts nums.index(target)
+  elsif ((nums.last - target) < 0)
+    return (nums.length)
+  else
+    for i in (0..nums.length-1)
+      if target < nums[i]
+        return i
+      end
+    end
+  end
 end
-end
-end
-search_insert([1,2,3,4],5)
 
+a=[0,1,2,3,5,7,8,10]
+print search_insert a,12
+puts "DONE"

@@ -1,4 +1,4 @@
-a=[1,2,2,4,4,5]
-if (a==1)
-	print "GHAI"
-end
+    num=5
+    for x in [2, 3, 5]
+    	print x
+     end

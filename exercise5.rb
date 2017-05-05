@@ -1,17 +1,22 @@
-def remove_duplicates(array)
-  n=array.length
-  0.upto(n) do |i|
-    if array[i] == array[i+1]
-      array.delete(array[i])
-    end
+
+
+Enumerable.class_eval do
+  def mode
+    group_by do |e|
+      e
+    end.values.max_by(&:size).first
   end
-  print array
-  return array
 end
 
-a=[1,5,2,0,1]
-a.sort!
 
-print a
-a=remove_duplicates(a)
-print " Length of arrary #{a.length}"
+def majority_element(nums)
+	counts = Hash.new 0
+
+	nums.each do |word|
+  	counts[word] += 1
+  end
+  print counts
+  print "Element that has the most occurences #{(nums.mode)}"
+end
+
+majority_element([1,1,2,2,2,5,6,77])
